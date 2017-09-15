@@ -4,7 +4,8 @@ import os
 import sys
 import datetime as dt
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+dir = os.path.dirname(__file__)
+sys.path.insert(0, os.path.abspath(os.path.join(dir, '..')))
 
 def make_time(yr, mo, day, hr, min):
     return dt.datetime.combine(dt.date(yr, mo, day), dt.time(hr, min))
@@ -14,7 +15,7 @@ from pressures.get_csv import *
 class TestCsv(TestCase):
 
     def test_small_csv(self):
-        iter = get_csv('./small_test.csv')
+        iter = get_csv(os.path.join(dir, 'small_test.csv'))
         self.assertEqual(next(iter), (make_time(2017, 8, 19, 13, 30), 117, 62))
         next(iter)
         next(iter)
