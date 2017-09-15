@@ -5,16 +5,19 @@ This Python module reads a CSV file containing blood pressure data.
 
 """
 import csv
-import datetime as dt
+from dateutil.parser import parse
 
 def format_pressures(row):
     """ Returns a tuple for each row in the CSV file.
 
-    The row should contain four elements: date, time, systolic, diastolic.
+    :param row: four elements: date, time, systolic, diastolic.
 
-    The tuple contains: (datetime, systolic, diastolic).
+    :returns:  tuple containing: (datetime, systolic, diastolic).
     """
-    return (dt.datetime.combine(dt.date(2017, 8, 19), dt.time(13, 30)), 117, 62)
+    time = parse(row[0] + ' ' + row[1], ignoretz=True)
+    systolic = int(row[2])
+    diastolic = int(row[3])
+    return (time, systolic, diastolic)
 
 def get_csv(filename):
     """ Returns an iterator for the rows of the named CSV file. """
