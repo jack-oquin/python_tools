@@ -19,5 +19,6 @@ def plot(data):
     plt.title('blood pressure measurements')
     plt.gcf().autofmt_xdate()
     plt.plot(times, systolic, 'ro')
-    plt.plot(times, diastolic, 'bo')
+    plt.plot(times, diastolic, 'bs')
+    plt.axis([min(times), max(times), 0, max(systolic)])
     plt.show()
