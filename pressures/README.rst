@@ -16,7 +16,7 @@ usage
 
 Open the Google Drive sheet in a browser.
 
-Select ``File``>``Download as``>``Comma-separated values (.csv current sheet)``
+Select ``File>Download as>Comma-separated values (.csv current sheet)``
 
 Run this command on the downloaded file::
 
