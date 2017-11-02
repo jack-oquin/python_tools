@@ -20,6 +20,6 @@ Select ``File>Download as>Comma-separated values (.csv current sheet)``
 
 Run this command on the downloaded file::
 
-  plot_pressures.py ~Downloads/<file name>
+  plot_pressures.py ~/Downloads/<file name>
 
 In the plot window, select save plot and provide a file name.
