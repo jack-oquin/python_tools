@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import numpy
 
-window_len = 29
+window_len = 19
 
 def moving_average(x, n=window_len):
     avgs = numpy.cumsum(numpy.array(x), dtype=float)
