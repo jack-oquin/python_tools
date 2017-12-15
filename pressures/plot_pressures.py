@@ -7,18 +7,26 @@ This module is an executable Python script for ploting blood pressure readings.
 
 """
 import sys
+from optparse import OptionParser
 from pressures.get_csv import get_csv
 from pressures.plot import plot
 
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 2:
+    parser = OptionParser(usage='usage: %prog [options] FILENAME.CSV')
+    parser.add_option("-a", "--no-avgs",
+                      action="store_false", dest="avgs", default=True,
+                      help="do not plot moving averages")
+    parser.add_option("-d", "--data",
+                      action="store_true", dest="raw_data", default=False,
+                      help="plot raw data")
+    (options, args) = parser.parse_args()
+
+    if not args:
         print('error: CSV file parameter required\n', file=sys.stderr)
-        print('usage: plot filename.csv')
-        # print('usage: plot filename.csv [ <start_date> [ <end_date> ]]',
-        #       file=sys.stderr)
+        parser.print_help()
         sys.exit(9)
 
-    plot(get_csv(sys.argv[1]))
+    plot(get_csv(args[0]), avgs=options.avgs, raw_data=options.raw_data)
     sys.exit(0)
