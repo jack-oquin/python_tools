@@ -26,8 +26,9 @@ In the plot window, select save plot and provide a file name.
 
 command line
 ------------
-::
-  Usage: plot_pressures.py [options] FILENAME.CSV
+
+  Usage:
+    plot_pressures.py [options] FILENAME.CSV
 
   Options:
     -h, --help     show this help message and exit
