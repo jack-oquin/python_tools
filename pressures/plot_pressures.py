@@ -23,8 +23,8 @@ if __name__ == '__main__':
                       help="plot raw data")
     (options, args) = parser.parse_args()
 
-    if not args:
-        print('error: CSV file parameter required\n', file=sys.stderr)
+    if len(args) != 1:
+        print('error: a single CSV file name parameter is required\n', file=sys.stderr)
         parser.print_help()
         sys.exit(9)
 
