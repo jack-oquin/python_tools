@@ -34,3 +34,11 @@ command line
     -h, --help     show this help message and exit
     -a, --no-avgs  do not plot moving averages
     -d, --data     plot raw data
+
+running self-tests
+------------------
+
+From the main source directory::
+
+  flake8 . --count --max-line-length=120
+  nosetests3 tests

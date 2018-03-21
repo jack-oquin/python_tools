@@ -3,14 +3,15 @@ from unittest import TestCase
 import os
 import sys
 import datetime as dt
+from pressures.get_csv import get_csv
 
 dir = os.path.dirname(__file__)
 sys.path.insert(0, os.path.abspath(os.path.join(dir, '..')))
 
+
 def make_time(yr, mo, day, hr, min):
     return dt.datetime.combine(dt.date(yr, mo, day), dt.time(hr, min))
 
-from pressures.get_csv import *
 
 class TestCsv(TestCase):
 

@@ -10,10 +10,12 @@ import numpy
 
 window_len = 19
 
+
 def moving_average(x, n=window_len):
     avgs = numpy.cumsum(numpy.array(x), dtype=float)
     avgs[n:] = avgs[n:] - avgs[:-n]
     return avgs[n-1:] / n
+
 
 def plot(data, avgs=True, raw_data=False):
     """ Plot a stream of blood pressure measurements.

@@ -7,6 +7,7 @@ This Python module reads a CSV file containing blood pressure data.
 import csv
 from dateutil.parser import parse
 
+
 def format_pressures(row):
     """ Returns a tuple for each row in the CSV file.
 
@@ -18,6 +19,7 @@ def format_pressures(row):
     systolic = int(row[2])
     diastolic = int(row[3])
     return (time, systolic, diastolic)
+
 
 def get_csv(filename):
     """ Returns an iterator for the rows of the named CSV file. """
